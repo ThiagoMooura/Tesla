@@ -1,0 +1,413 @@
+@font-face {
+    font-family: GothamSSm;
+    src: url(../fonts/GothamSSm-Book_Web.woff2);
+}
+@font-face {
+    font-family: GothamBook;
+    src: url(../fonts/GothamSSm-Medium_Web.woff2);
+}
+@font-face {
+    font-family: tesla;
+    src: url(../fonts/TESLA.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: GothamSSm;
+}
+:root{
+    --color-white: #fff;
+    --color-white-btn: rgba(255,255,255,0.65);
+    --color-overlay: rgba(0, 0, 0, 0.05);
+    --color-overlay-dark: rgba(0, 0, 0, 0.7);
+    --color-dark: #171A20;
+    --color-name: #393c41;
+    --color-footer: #5c5d61;
+    --color-description: #5c5d61;
+    --color-description-link: #181b21;
+}
+body{
+    overflow-x: hidden;
+}
+.container{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-height: 100vh;
+    overflow-y: auto;
+   scroll-snap-type: y mandatory;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+section{
+    scroll-snap-align: start;
+    position: relative;
+    z-index: -1;
+}
+header{
+    width: 100%;
+    height: 3.37rem;
+    position: fixed;
+    z-index: 2;
+}
+.menu{
+    width: 100%;
+    height: 3.37rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem 0 3rem;
+}
+.logo{
+    font-size: .8em;
+    text-transform: uppercase;
+    letter-spacing: 6.5px;
+    cursor: pointer;
+}
+.logo h1{
+    font-family: tesla;
+}
+.menu-links{
+    width: auto;
+    height: 3.37rem;
+    display: flex;
+    align-items: center;
+    margin-left: 4.5rem;
+    
+    /*position: absolute;
+    z-index: -1;*/
+}
+.nav{
+    display: flex;
+}
+.nav li a{
+    text-transform: capitalize;
+    color: black;
+    display: flex;
+    padding: .5rem 1rem;
+    font-size: 0.875em;
+    border-radius: .7rem;
+    transition: .3s;
+    font-weight: 700;
+    color: var(--color-name);
+}
+.nav li a:hover{
+    background-color: var(--color-overlay);
+}
+.btn-menu{
+    cursor: pointer;
+}
+
+.colapse-menu{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: var(--color-white);
+    padding: 0 2rem 10rem 2rem;
+    height: 100vh;
+    overflow-y: auto;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: .5s;
+}
+.colapse-menu.show{
+    transform: translateX(0%);
+    transition: .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    opacity: 1;
+
+}
+.nav.alt{
+    flex-direction: column;
+    overflow-x: hidden;
+}
+.nav.alt img{
+    height: 1.8rem;
+}
+.align{
+    margin-left: -.3rem;
+    display: flex;
+}
+.align span{
+    margin-top: .4rem;
+    margin-left: .5rem;
+}
+.betwen li a{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+}
+.colapse{
+    padding: 2rem 0;
+    display: flex;
+    justify-content: flex-end;
+}
+.colapse i{
+    padding: .5rem .7rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: .3s;
+}
+.colapse i:hover{
+    background-color: var(--color-overlay);
+}
+.nav.alt li a{
+    width: 15rem;
+    margin: .3rem 0;
+    color: var(--color-name);
+}
+.hide{
+    display: flex;
+}
+.some{
+    display: none;
+}
+
+
+
+.model-s{
+    background-image: url(../images/model-s-desktop.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.wrap{
+    position: fixed;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    text-align: center;
+    z-index: 0;
+    height: .1px;
+    margin-left: -.5rem;
+}
+.main{
+    position: relative;
+    height: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.abc1,.abc2,.abc3,.abc4,.abc5,.abc6,.abc7{
+    position: relative;
+    height: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .2s;
+}
+.abc2,.abc3,.abc4,.abc5,.abc6,.abc7{
+    opacity: 0;
+}
+.name{
+    position: absolute;
+    top: 18vh;
+    text-align: center;
+    width: max-content;
+}
+.name h1{
+    color: var(--color-name);
+    text-transform: capitalize;
+    font-size: 2.4em;
+    font-weight: 600;
+    line-height: 1.4em;
+    letter-spacing: 0.5px;
+}
+.name span{
+    font-weight: 300;
+    color: var(--color-description);
+    font-size: 0.875em;
+    letter-spacing: -.5px;
+}
+.name a{
+    color: var(--color-description);
+    text-decoration: underline;
+}
+
+.order{
+    display: flex;
+    position: absolute;
+    bottom: -90.5vh;
+}
+.order.alt{
+    bottom: -85vh;
+}
+.button{
+    text-transform: uppercase;
+    font-size: .75em;
+    font-weight: 500;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16rem;
+    height: 2.5rem;
+    border-radius: 2rem;
+    margin: .8rem;
+}
+.button.black{
+    background-color: var(--color-overlay-dark);
+    color: var(--color-white);
+}
+.button.dark{
+    background-color: var(--color-dark);
+    color: var(--color-white);
+}
+.button.light{
+    background-color: var(--color-white-btn);
+    color: var(--color-name);
+}
+
+
+
+
+
+
+
+
+.model-y{
+    background-image: url(../images/model-y-desktop.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.model-3{
+    background-image: url(../images/model-3-desktop.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.model-x{
+    background-image: url(../images/model-x-desktop.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.solar-panels{
+    background-image: url(../images/solar-panels-desktop.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.solar-roof{
+    background-image: url(../images/solar-roof-desktop.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.accessories{
+    background-image: url(../images/accessories-desktop.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+
+footer{
+    position: absolute;
+    bottom: -39.8rem;
+}
+footer ul{
+    display: flex;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+footer ul li{
+    margin: .4rem;
+}
+footer ul li a{
+    font-size: .75em;
+    text-transform: capitalize;
+    color: var(--color-footer);
+}
+
+
+
+
+
+
+
+@media(max-width: 1199px){
+    .nav{
+        display: none;
+    }
+    .nav.alt{
+        display: flex;
+    }
+    .nav.alt1{
+        display: flex;
+    }
+    .hide{
+        display: none;
+    }
+    .btn-menu{
+        background-color: var(--color-overlay);
+        border-radius: .7rem;
+    }
+    .some{
+        display: block;
+    }
+    .menu{
+        padding: .5rem 1rem 0 2rem;
+    }
+}
+
+@media(max-width: 640px){
+    .order{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100vw;
+        padding: 0 .9rem;
+    }
+    .button{
+        display: flex;
+        width: 100%;
+    }
+    .name h1{
+        font-size: 2.25em;
+    }
+}
+@media(max-width: 600px){
+    .model-s{
+        background-image: url(../images/model-s-mobile.jpg);
+    }
+    .model-y{
+        background-image: url(../images/model-y-mobile.jpg);
+    }
+    .model-3{
+        background-image: url(../images/model-3-mobile.jpg);
+    }
+    .model-x{
+        background-image: url(../images/model-x-mobile.jpg);
+    }
+    .solar-panels{
+        background-image: url(../images/solar-panels-mobile.jpg);
+    }
+    .solar-roof{
+        background-image: url(../images/solar-roof-mobile.jpg);
+    }
+    .accessories{
+        background-image: url(../images/accessories-mobile.jpg);
+    }
+}
